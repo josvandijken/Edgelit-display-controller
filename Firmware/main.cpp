@@ -194,13 +194,9 @@ void display_time()
 {
   String time_now = getEpochStringByParams(CE.toLocal(now()));
   // Display digits (select digit from string)
-
   displayDigit((int)(time_now[15] - 48));
-
   displayDigit((int)(time_now[14] - 48));
-
   displayDigit((int)(time_now[12] - 48));
-
   displayDigit((int)(time_now[11] - 48));
 }
 
@@ -224,7 +220,6 @@ void update_NTP()
 
 void displayDigit(int digit)
 {
-
   digitalWrite(latchPin, LOW);
   int i = 0;
   for (i = 0; i < 10; i++)
@@ -234,6 +229,5 @@ void displayDigit(int digit)
     digitalWrite(clockPin, HIGH);
     digitalWrite(clockPin, LOW);
   }
-
   digitalWrite(latchPin, HIGH);
 }
